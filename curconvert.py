@@ -211,7 +211,7 @@ def exchange(f: str, t: str, a: float) -> float:
     )
 
     if response.status_code != codes.ok:
-        raise Exception(f"invalid api return code {response.status_code}")
+        raise Exception(f"invalid api return code {response.status_code}, these currency pairs may not exchange")
 
     return response.json()["nanoapi"]
 
