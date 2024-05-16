@@ -187,10 +187,12 @@ currency_list =  [
             "ZWL"
         ]
 
+currency_list1 = ["USD", "EUR", "JPY", "GBP", "AUD", "CAD", "CHF", "CNY", "SEK", "MXN", "NZD", "SGD", "HKD", "NOK", "KRW", "TRY", "INR", "RUB", "BRL", "ZAR", "DKK", "PLN", "TDW", "THB", "MYR"]
+
 # Currency converter function
 
 def exchange(f: str, t: str, a: float) -> float:
-    if f not in currency_list or t not in currency_list:
+    if f not in currency_list1 or t not in currency_list1:
         raise ValueError("Invalid currency selection")
     
     params = {
@@ -211,7 +213,7 @@ def exchange(f: str, t: str, a: float) -> float:
     )
 
     if response.status_code != codes.ok:
-        raise Exception(f"invalid api return code {response.status_code}, these currency pairs may not exchange")
+        raise Exception(f"invalid api return code {response.status_code}, this could be a pair that currently doesn't exchange")
 
     return response.json()["nanoapi"]
 
@@ -219,8 +221,8 @@ def exchange(f: str, t: str, a: float) -> float:
 st.sidebar.header('Currency Options')
 
 amount = st.number_input("Enter amount to convert here")
-base_price_unit = st.sidebar.selectbox('Select base currency', currency_list).upper()
-symbols_price_unit = st.sidebar.selectbox('Select target currency', currency_list).upper()
+base_price_unit = st.sidebar.selectbox('Select base currency', currency_list1).upper()
+symbols_price_unit = st.sidebar.selectbox('Select target currency', currency_list1).upper()
 
 # Defining the variables for the conversion
 a = float(amount)
