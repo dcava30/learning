@@ -45,13 +45,13 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Accept user input / Function for responses
-if prompt := st.chat_input("What's up"):
+if prompt := st.chat_input("Talk to Borat"):
+    # Add user message to chat history
+    st.session_state.messages.append({"role": "user", "content": prompt})
     # Display user message in a chat message container
     with st.chat_message("user"):
         st.markdown(prompt)
-    # Add user message to chat history
-    st.session_state.messages.append({"role": "user", "content": prompt})
-
+    
 
 # Display assistant repsonse in chat message container
 with st.chat_message("assistant"):
