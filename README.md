@@ -8,3 +8,5 @@ https://stackoverflow.com/questions/68896900/strange-currency-rates-source-not-r
 
 API: https://exchange.nanoapi.dev
 
+## Currency Converting Application 
+Practise deployment in Azure environment
