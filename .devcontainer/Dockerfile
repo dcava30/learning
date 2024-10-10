@@ -6,13 +6,13 @@ RUN apt-get update && \
     apt-get install -y python3 python3-pip
 
 # Install the Azure CLI
-RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+# RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
 # Set the working directory in the container
 WORKDIR /learning
 
 # Copy the requirements.txt file and install Python dependencies
-COPY requirements.txt .
+COPY requirements.txt ./requirements.txt
 RUN pip3 install -r requirements.txt
 
 # Copy the current directory contents into the container
