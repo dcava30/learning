@@ -2,7 +2,7 @@
 	"name": "Default Linux Universal",
 	// Use the build context (Dockerfile)
 	"build": {
-		"dockerfile": "./Dockerfile"  // Path to the Dockerfile
+		"dockerfile": "Dockerfile"  // Path to the Dockerfile
 	},
 	"features": {
 		// You can remove the features block or leave it for future extension if needed
