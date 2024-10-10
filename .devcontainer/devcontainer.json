@@ -2,7 +2,8 @@
 	"name": "Default Linux Universal",
 	// Use the build context (Dockerfile)
 	"build": {
-		"dockerfile": "Dockerfile"  // Path to the Dockerfile
+		"dockerfile": "Dockerfile",  // Path to the Dockerfile
+		"context": ".." // The build context is the parent folder (Learning)
 	},
 	"features": {
 		// You can remove the features block or leave it for future extension if needed

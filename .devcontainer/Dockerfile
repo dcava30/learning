@@ -11,12 +11,14 @@ RUN apt-get update && \
 # Set the working directory in the container
 WORKDIR /learning
 
-# Copy the requirements.txt file and install Python dependencies
-COPY requirements.txt ./requirements.txt
-RUN pip3 install -r requirements.txt
+# Copy the requirements.txt file into the container from the parent directory
+COPY ../requirements.txt /learning/requirements.txt
 
-# Copy the current directory contents into the container
-COPY . /learning
+# Install Python dependencies
+RUN pip3 install -r /learning/requirements.txt
+
+# Copy the rest of the app files (everything) into the container
+COPY ../ /learning
 
 # Expose port 8501 for Streamlit
 EXPOSE 8501
