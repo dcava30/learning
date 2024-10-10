@@ -23,3 +23,5 @@ EXPOSE 8501
 
 # Command to run your Streamlit app
 CMD ["streamlit", "run", "curconvert.py"]
+
+#Should run on port 8501

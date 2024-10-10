@@ -14,3 +14,5 @@
 	// You can add a post-create command to verify the setup
 	"postCreateCommand": "echo 'Dev container ready!'"
 }
+
+// Should run locally and build container from dockerfile configuration
